@@ -1,0 +1,394 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-rows: 55px auto;
+    background-color: #fafafa;
+}
+
+main {
+    background-color: #fafafa;
+}
+
+@media screen and (min-width:760px) {
+    main {
+        padding: 30px 20px;
+    }
+}
+
+@media screen and (min-width:900px) {
+    main,
+    .navbar-container-grid {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/******************************************************/
+
+
+/*********** NAVBAR **********************/
+
+
+/******************************************************/
+
+.navbar {
+    height: 54px;
+}
+
+.navbar .navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 1px 0px #dcdcdc;
+    background-color: white;
+    z-index: 3;
+}
+
+.navbar div .navbar-container-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 0px 20px;
+}
+
+.navbar-brand a {
+    display: grid;
+    align-content: center;
+    height: 100%;
+}
+
+.navbar-brand a img {
+    width: 103px;
+    height: 29px;
+    max-width: 100%;
+}
+
+.navbar-search {
+    display: none;
+}
+
+.navbar-links ul {
+    list-style: none;
+    padding: 0;
+    /*grid-column: 2 / span 1;*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.navbar-links ul li a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.navbar-links ul li i {
+    font-size: 20px;
+}
+
+@media screen and (min-width:760px) {
+    .navbar div .navbar-container-grid {
+        grid-template-columns: 2fr 2fr 2fr;
+    }
+    .navbar-search {
+        display: block;
+        align-self: center;
+    }
+    .navbar-search input {
+        background-color: #fafafa;
+        border: solid 1px #dbdbdb;
+        border-radius: 3px;
+        padding: 3px 10px 3px 26px;
+        color: #262626;
+        width: 85%;
+        height: 34px;
+    }
+}
+
+
+/******************************************************/
+
+
+/******************** HEADER **************************/
+
+
+/******************************************************/
+
+header {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "profile-img profile-setting profile-setting" "profile-img profile-setting profile-setting" "profile-name profile-name profile-name" "profile-overlays profile-overlays profile-overlays";
+    margin: 30px 16px 24px 16px;
+    row-gap: 15px;
+}
+
+.profile-img {
+    grid-area: profile-img;
+    margin: 0;
+    margin-right: 28px;
+}
+
+.profile-img img {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+}
+
+.profile-setting {
+    grid-area: profile-setting;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "nickname general-setting" "edit-profile edit-profile";
+    row-gap: 15px;
+    column-gap: 8px;
+}
+
+.nickname {
+    grid-area: nickname;
+    color: #262626;
+    font-weight: 300;
+    font-size: 28px;
+    align-self: center;
+    margin: 0;
+}
+
+.edit-profile {
+    grid-area: edit-profile;
+    background: transparent;
+    border: 1px solid #dbdbdb;
+    height: 30px;
+    align-self: center;
+}
+
+.general-setting {
+    grid-area: general-setting;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: 0, 0;
+    border: 0;
+    align-self: center;
+}
+
+.general-setting i {
+    font-size: 24px;
+}
+
+.profile-overlays {
+    grid-area: profile-overlays;
+    list-style: none;
+    margin: 0;
+    margin-left: -16px;
+    padding: 12px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1.4px solid #dbdbdb;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100vw;
+}
+
+.profile-overlays li a {
+    text-decoration: none;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.profile-overlays li a span {
+    color: #262626;
+}
+
+.profile-name {
+    grid-area: profile-name;
+}
+
+.profile-name h3 {
+    color: #262626;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media screen and (min-width:760px) {
+    header {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "profile-img profile-setting profile-setting profile-setting" "profile-img profile-overlays profile-overlays profile-overlays" "profile-img profile-name  profile-name profile-name";
+        margin: 30px 16px 44px 16px;
+        row-gap: 15px;
+    }
+    .profile-img {
+        margin-right: 35px;
+    }
+    .profile-img img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    .profile-setting {
+        grid-area: profile-setting;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "nickname edit-profile general-setting";
+        row-gap: 0px;
+        column-gap: 0px;
+        text-align: left;
+    }
+    .profile-overlays {
+        margin-left: 0px;
+        padding: 12px 0px;
+        border-top: 0px solid #dbdbdb;
+        border-bottom: 0px solid #dbdbdb;
+        width: 100%;
+    }
+    .profile-overlays li a {
+        display: block;
+        color: #262626;
+        font-size: 16px;
+        text-align: left;
+    }
+    .profile-overlays li a span {
+        font-weight: 600;
+    }
+    .general-setting {
+        padding-left: 16px;
+    }
+    .profile-name h3 {
+        margin-top: 0px;
+        font-size: 16px;
+    }
+}
+
+
+/******************************************************/
+
+
+/***********  NAV CONTENT *****************************/
+
+
+/******************************************************/
+
+.nav-content ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+.nav-content ul li a {
+    text-decoration: none;
+}
+
+.nav-content ul li a i {
+    font-size: 24px;
+    color: #999;
+}
+
+.nav-content ul li:nth-of-type(1) a i {
+    color: #3897f0;
+}
+
+.nav-content ul li a span {
+    display: none;
+}
+
+@media screen and (min-width:760px) {
+    .nav-content ul {
+        grid-template-rows: 53px;
+        border-top: 1px solid #dbdbdb;
+        margin-top: 0px
+    }
+    .nav-content ul li {
+        height: 100%;
+        padding-top: 18px;
+        box-sizing: border-box;
+    }
+    .nav-content ul li a span {
+        display: inline;
+        margin-left: 6px;
+    }
+    .nav-content ul li a,
+    .nav-content ul li a i {
+        font-size: 12px;
+        color: #999;
+    }
+    .nav-content ul li:nth-of-type(1) {
+        border-top: 1px solid #262626;
+    }
+    .nav-content ul li:nth-of-type(1) a,
+    .nav-content ul li:nth-of-type(1) a i {
+        color: #262626 !important;
+    }
+}
+
+
+/******************************************************/
+
+
+/***********  POST LIST **********************/
+
+
+/******************************************************/
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    gap: 3px;
+}
+
+.post {
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+.post-image {
+    margin: 0;
+}
+
+.post-image img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.post-overlay {
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.post:hover .post-overlay {
+    display: flex;
+}
+
+.post-likes,
+.post-comments {
+    width: 80px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+@media screen and (min-width: 760px) {
+    .post-list {
+        gap: 28px;
+    }
+}
